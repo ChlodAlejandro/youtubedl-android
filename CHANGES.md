@@ -1,0 +1,1 @@
+See (the repo commits)[https://github.com/ChlodAlejandro/youtubedl-android/commits/master] for a full list of changes.

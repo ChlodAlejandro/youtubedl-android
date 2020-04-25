@@ -1,11 +1,12 @@
 # youtubedl-android
 Android library wrapper for [youtube-dl](https://github.com/rg3/youtube-dl) executable
 
-[![](https://jitpack.io/v/yausername/youtubedl-android.svg)](https://jitpack.io/#yausername/youtubedl-android)
+[![](https://jitpack.io/v/ChlodAlejandro/youtubedl-android.svg)](https://jitpack.io/#ChlodAlejandro/youtubedl-android)
 
 
 ## Credits
 *  [youtubedl-java](https://github.com/sapher/youtubedl-java) by [sapher](https://github.com/sapher), youtubedl-android adds android compatibility to youtubedl-java.
+*  [youtubedl-android](https://github.com/yausername/youtubedl-android) by [yausername](https://github.com/yausername), the original project.
 
 <br/>
 
@@ -23,14 +24,14 @@ allprojects {
 Step 2: Add the dependency
 ```gradle
 dependencies {
-    implementation 'com.github.yausername.youtubedl-android:library:0.7.+'
+    implementation 'com.github.chlodalejandro.youtubedl-android:library:0.7.+'
 }
 ```
 Optional FFmpeg dependency can also be added
 ```gradle
 dependencies {
-    implementation 'com.github.yausername.youtubedl-android:library:0.7.+'
-    implementation 'com.github.yausername.youtubedl-android:ffmpeg:0.7.+'
+    implementation 'com.github.chlodalejandro.youtubedl-android:library:0.7.+'
+    implementation 'com.github.chlodalejandro.youtubedl-android:ffmpeg:0.7.+'
 }
 ```
 
