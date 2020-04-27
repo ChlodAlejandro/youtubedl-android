@@ -26,16 +26,18 @@ public class VideoInfoCollection {
             for (String s : response.getOut().split("\n")) {
                 infoList.add(objectMapper.readValue(s, VideoInfo.class));
             }
-            return new VideoInfoCollection(infoList);
+            return new VideoInfoCollection(url, infoList);
         } catch (IOException var6) {
             throw new YoutubeDLException("Unable to parse video information: " + var6.getMessage());
         }
     }
 
+    public final String originUrl;
     public final boolean single;
     public final List<VideoInfo> infoList;
 
-    private VideoInfoCollection(List<VideoInfo> infoList) {
+    private VideoInfoCollection(String originUrl, List<VideoInfo> infoList) {
+        this.originUrl = originUrl;
         this.infoList = infoList;
         single = infoList.size() == 1;
     }
