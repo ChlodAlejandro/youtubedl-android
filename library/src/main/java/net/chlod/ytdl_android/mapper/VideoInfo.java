@@ -60,6 +60,21 @@ public class VideoInfo {
     //public ArrayList<VideoSubtitle> subtitles;
 	@JsonProperty("manifest_url")
 	public String manifestUrl;
+
+	@JsonProperty("playlist")
+	public String playlistName;
+	@JsonProperty("playlist_id")
+	public String playlistId;
+	@JsonProperty("n_entries")
+	public String playlistEntries;
+	@JsonProperty("playlist_title")
+	public String playlistTitle;
+	@JsonProperty("playlist_uploader")
+	public String playlistUploader;
+	@JsonProperty("playlist_uploader_id")
+	public String playlistUploaderId;
+	@JsonProperty("playlist_index")
+	public String playlistIndex;
     
     //some useful getters
 	public String getViewCount() {
