@@ -16,7 +16,7 @@ public class VideoInfoCollection {
 
     public static VideoInfoCollection getInfo(String url) throws YoutubeDLException, InterruptedException {
         YoutubeDLRequest request = new YoutubeDLRequest(url);
-        request.setOption("dump-json");
+        request.setOption("--dump-json");
         YoutubeDLResponse response = YoutubeDL.getInstance().execute(request);
         ObjectMapper objectMapper = new ObjectMapper();
 
