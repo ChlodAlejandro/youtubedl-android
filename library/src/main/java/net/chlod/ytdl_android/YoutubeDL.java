@@ -1,6 +1,7 @@
 package net.chlod.ytdl_android;
 
 import android.app.Application;
+
 import androidx.annotation.Nullable;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -8,7 +9,6 @@ import com.orhanobut.logger.AndroidLogAdapter;
 import com.orhanobut.logger.BuildConfig;
 import com.orhanobut.logger.Logger;
 
-import net.chlod.ytdl_android.R;
 import net.chlod.ytdl_android.objects.VideoInfoCollection;
 import net.chlod.ytdl_android.utils.StreamGobbler;
 import net.chlod.ytdl_android.utils.StreamProcessExtractor;
@@ -21,6 +21,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
+import java.util.regex.Pattern;
 
 public class YoutubeDL {
 
@@ -151,7 +152,9 @@ public class YoutubeDL {
         InputStream outStream = process.getInputStream();
         InputStream errStream = process.getErrorStream();
 
-        StreamProcessExtractor stdOutProcessor = new StreamProcessExtractor(outBuffer, outStream, callback);
+        //noinspection RegExpRedundantEscape
+        StreamProcessExtractor stdOutProcessor = new StreamProcessExtractor(
+                Pattern.compile("\\[download\\]\\s+(\\d+\\.\\d)% .* ETA (\\d+):(\\d+)"), outBuffer, outStream, callback);
         StreamGobbler stdErrProcessor = new StreamGobbler(errBuffer, errStream);
 
         try {

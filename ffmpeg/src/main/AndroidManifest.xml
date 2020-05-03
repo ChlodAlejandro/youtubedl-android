@@ -1,2 +1,1 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="net.chlod.ytdl_android_ffmpeg" />
+<manifest package="net.chlod.ytdl_android_ffmpeg" />

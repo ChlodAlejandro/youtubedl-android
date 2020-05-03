@@ -49,8 +49,10 @@ public class VideoInfo {
     public int width;
     public int height;
     public String format;
-    @JsonProperty("format_id")
-    public String formatId;
+	@JsonProperty("format_id")
+	public String formatId;
+	@JsonProperty("requested_formats")
+	public ArrayList<VideoFormat> requestedFormats;
     public String ext;
 
     @JsonProperty("http_headers")

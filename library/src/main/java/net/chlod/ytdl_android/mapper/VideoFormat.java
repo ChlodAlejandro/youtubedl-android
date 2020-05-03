@@ -1,5 +1,7 @@
 package net.chlod.ytdl_android.mapper;
 
+import androidx.annotation.NonNull;
+
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -25,4 +27,10 @@ public class VideoFormat {
     public String url;
     @JsonProperty("manifest_url")
     public String manifestUrl;
+
+    @NonNull
+    @Override
+    public String toString() {
+        return format;
+    }
 }

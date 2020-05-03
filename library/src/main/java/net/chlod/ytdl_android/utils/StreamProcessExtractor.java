@@ -1,13 +1,13 @@
 package net.chlod.ytdl_android.utils;
 
 import com.orhanobut.logger.Logger;
+
 import net.chlod.ytdl_android.DownloadProgressCallback;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.Reader;
-import java.nio.charset.StandardCharsets;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -19,10 +19,10 @@ public class StreamProcessExtractor extends Thread {
     private final StringBuffer buffer;
     private final DownloadProgressCallback callback;
 
-    @SuppressWarnings("RegExpRedundantEscape")
-    private final Pattern p = Pattern.compile("\\[download\\]\\s+(\\d+\\.\\d)% .* ETA (\\d+):(\\d+)");
+    private final Pattern p;
 
-    public StreamProcessExtractor(StringBuffer buffer, InputStream stream, DownloadProgressCallback callback) {
+    public StreamProcessExtractor(Pattern p, StringBuffer buffer, InputStream stream, DownloadProgressCallback callback) {
+        this.p = p;
         this.stream = stream;
         this.buffer = buffer;
         this.callback = callback;
